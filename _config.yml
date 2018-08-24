@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Yee Ziqiang, Ziig"
-  avatar           : "assets/images/ZiigProfile.jpg.jpg"
+  avatar           : "assets/images/ZiigProfile.jpg"
   bio              : "Aspiring Data Scientist."
   location         : "Sunny Singapore"
   email            : "ziig.yee@gmail.com"
