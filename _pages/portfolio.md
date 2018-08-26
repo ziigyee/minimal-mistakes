@@ -1,11 +1,11 @@
 ---
-title: Projects
+title: Portfolio
 permalink: portfolio/
 layout: splash
 header:
   overlay_color: "#5e616c"
   overlay_image: "/assets/images/portfolio_banner.jpg"
-excerpt: Data Science Projects
+excerpt: Embracing new frontiers
 feature_row:
 - image_path: "/assets/images/title.jpg"
   alt: Capstone Project
