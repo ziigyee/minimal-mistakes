@@ -8,13 +8,16 @@ toc_label: ON THIS PAGE
 ---
 <img src="/assets/images/about_banner.jpg" width="100%">
 ## About Me
-Aspiring data scientist seeking to drive and create value through data. Inquisitive and keen learner looking to explore new ideas and challenge myself.
-Abled Python coder with SQL, statistical modeling and machine learning skills, and avid believer that data is the new raw material for businesses.
-## When I'm not dabbling with data
-* Jogging to stay healthy
-* Satisfy my tastebuds 
-* Volunteer at a soup kitchen
-* Travel and explore the world
-## What's Next
-Continue to widen my knowledge, and explore on the next topic to start a project. The field of data science is a continuous learning journey.
-I am currently seeking for career opportunities in data science related positions as well. If you are keen for a discussion, I can be contacted via LinkedIn or the 'Contact Me' page.
+Always seeking to understand the business values first, before looking at the data. I am an aspiring data scientist seeking to drive and create value with solutions and insights that are purposeful and meaningful. Inquisitive and keen learner looking to explore new data-enabled horizons for business impact.
+
+Fluent in Python, SQL, classical statistical modelling and machine learning skills. 
+## The Non-data scientist Me
+* I run Goodcare.sg - partnering with organizations to provide care for the elderly by donations and sales of adult diapers.
+* I love to cook and experiment in the kitchen
+* Reading a good book (Currently: Ray Dalio - Principles)
+
+## Next Steps
+The learning journey in data science or even in general, never ends. Theres always something new, from technologies to methodologies. Reading newsletters and even research papers are habits that I'll be keeping up with. 
+Currently, I am seeking data science career opportunities. Do contact me via LinkedIn or the 'Contact Me' page to explore any potential opportunities!
+
+-Ziig
