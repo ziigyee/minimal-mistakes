@@ -4,7 +4,7 @@ permalink: projects/
 layout: splash
 header:
   overlay_color: "#5e616c"
-  overlay_image: "/assets/images/portfolio_banner.png"
+  overlay_image: "/assets/images/portfolio_banner.jpg"
 excerpt: Data Science Projects
 feature_row:
 - image_path: "/assets/images/grocer.jpg"
