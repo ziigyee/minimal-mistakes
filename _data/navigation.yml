@@ -5,7 +5,7 @@ main:
   - title: "About"
     url: about/
   - title: "Projects"
-    url: projects/
+    url: portfolio/
   - title: "Contact Me"
     url: contact/
   # - title: "Sitemap"
