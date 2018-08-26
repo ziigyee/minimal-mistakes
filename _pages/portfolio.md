@@ -15,7 +15,6 @@ feature_row:
   btn_class: btn--primary
   btn_label: Read More
   
-feature_row:
 - image_path: "/assets/images/title.jpg"
   alt: Capstone Project
   title: Capstone Project - Helpful Reviews
@@ -23,6 +22,8 @@ feature_row:
   url: "/capstone"
   btn_class: btn--primary
   btn_label: Read More
+  
+  
 github: "/ziigyee"
 intro: 
 ---
