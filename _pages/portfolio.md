@@ -19,10 +19,17 @@ feature_row:
   alt: Capstone Project
   title: Capstone Project - Helpful Reviews
   excerpt: Understanding the value of product reviews, predicting if a review is 'Helpful' or 'Not', leading to actionable business insights.
+  url: "https://github.com/ziigyee/Projects/blob/master/DSI4_Project_3/project-03-ZIIG_Q3_Attemp3.ipynb"
+  btn_class: btn--primary
+  btn_label: Read More
+
+- image_path: "/assets/images/title.jpg"
+  alt: Capstone Project
+  title: Capstone Project - Helpful Reviews
+  excerpt: Understanding the value of product reviews, predicting if a review is 'Helpful' or 'Not', leading to actionable business insights.
   url: "/capstone"
   btn_class: btn--primary
   btn_label: Read More
-  
   
 github: "/ziigyee"
 intro: 
