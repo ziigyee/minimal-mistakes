@@ -1,6 +1,6 @@
 ---
 title: Projects
-permalink: projects/
+permalink: portfolio/
 layout: splash
 header:
   overlay_color: "#5e616c"
