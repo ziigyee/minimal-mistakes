@@ -9,7 +9,7 @@ excerpt: Data Science Projects
 feature_row:
 - image_path: "/assets/images/title.jpg"
   alt: Capstone Project
-  title: Capstone Project: Helpful Reviews
+  title: Capstone Project - Helpful Reviews
   excerpt: Understanding the value of product reviews, predicting if a review is 'Helpful' or 'Not', leading to actionable business insights.
   url: "/capstone"
   btn_class: btn--primary
