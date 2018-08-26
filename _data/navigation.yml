@@ -6,7 +6,7 @@ main:
     url: about/
   - title: "Projects"
     url: projects/
-  - title: "Contact Me"
+  - title: "Contact"
     url: contact/
   # - title: "Sitemap"
   #   url: /sitemap/
