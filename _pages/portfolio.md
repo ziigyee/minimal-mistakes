@@ -10,8 +10,7 @@ feature_row:
 - image_path: "/assets/images/title.jpg"
   alt: Capstone Project
   title: Capstone Project - Helpful Reviews
-  excerpt: Product reviews have a high value in e-commerce. 
-Better decision making for the buyers, better sales traction for the merchants, and ultimately, more business for the platform.
+  excerpt: Product reviews have a high value in e-commerce. Better decision making for the buyers, better sales traction for the merchants, and ultimately, more business for the platform.
   url: "/capstone"
   btn_class: btn--primary
   btn_label: Read More
