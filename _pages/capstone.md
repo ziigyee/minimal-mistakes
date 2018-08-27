@@ -1,7 +1,7 @@
 ---
 layout: single
 permalink: capstone/
-title: &title "Grocery Identifier Joe (G.I.Joe)"
+title: &title "Better Customer Experience with Helpful Reviews"
 author_profile: true
 toc: true
 toc_label: ON THIS PAGE
