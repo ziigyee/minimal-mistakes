@@ -10,7 +10,9 @@ toc_label: ON THIS PAGE
 ## About Me
 Always seeking to understand the business values first, before looking at the data. I am an aspiring data scientist seeking to drive and create value with solutions and insights that are purposeful and meaningful. Inquisitive and keen learner looking to explore new data-enabled horizons for business impact.
 
-Fluent in Python, SQL, classical statistical modelling and machine learning skills. 
+Fluent in Python, SQL, classical statistical modelling and machine learning skills.
+
+I am also curious in exploring alternative data to better support business decisions,
 ## The Non-data scientist Me
 * I run Goodcare.sg - partnering with organizations to provide care for the elderly by donations and sales of adult diapers.
 * I love to cook and experiment in the kitchen
