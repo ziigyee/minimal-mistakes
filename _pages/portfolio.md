@@ -18,7 +18,7 @@ feature_row:
 - image_path: "/assets/images/housing.jpg"
   alt: Regressions Project
   title: Regressions Project - Predicing Housing Prices
-  excerpt: Estimating the value of homes from fixed characteristics.
+  excerpt: Estimating the value of homes from fixed characteristics. The main focus for me in this project was to use basic models that can be explained.
   url: "https://github.com/ziigyee/Projects/blob/master/DSI4_Project_3/project-03-ZIIG_Q3_Attemp3.ipynb"
   btn_class: btn--primary
   btn_label: View on Github
