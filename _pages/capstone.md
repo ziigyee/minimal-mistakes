@@ -6,7 +6,7 @@ author_profile: true
 toc: true
 toc_label: ON THIS PAGE
 ---
-<img src="/assets/images/capstone_banner.jpg" width="100%">
+<img src="/assets/images/capstone_banner.jpg">
 
 ## 1. Background
 
@@ -16,7 +16,7 @@ Every time we go looking for something, there are seems to be a variety of what 
 
 We no longer make our purchasing decisions in the blind. We rely on product reviews. Any shopper reads approximately 10 reviews before deciding if they would buy it. A review is a testimony. It's a proven track record of the product by previous buyer's recommendations or warnings.
 
-<img src="/assets/images/capstone_review.jpg" width="100%">
+<img src="/assets/images/capstone_review.jpg">
 
 The value that product reviews bring on any e-commerce platform:
 * For the **buyer**: Better decision making. Merchant/Product trust. Recommended.
@@ -32,16 +32,17 @@ Reviews are often separated into 2 groups. Helpful or Unhelpful. Helpful reviews
 
 Most e-commerce platforms allow the reviews to be voted on.
 
-<img src="/assets/images/capstone_eg.jpg" width="100%">
+<img src="/assets/images/capstone_eg.jpg">
 
 ## 2. Business Case
 **Actionable Insights**
 What can we do if we could determine that a review would be:
-<img src="/assets/images/capstone_helpful.jpg" width="100%">
+<img src="/assets/images/capstone_helpful.jpg">
 _**Helpful**_:
 * It could be put in the front of buyers on a product page to help potential buyers make a decision.
 * Potential buyers could still vote if that review was helpful to them or not.
-<img src="/assets/images/capstone_unhelpful.jpg" width="100%">
+
+<img src="/assets/images/capstone_unhelpful.jpg">
 _**Unhelpful**_:
 * The merchant or platform could follow up with the reviewer, seeking recourse or more information.
 * Alternative trigger for customer satisfaction issues.
