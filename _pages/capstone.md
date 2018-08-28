@@ -1,60 +1,52 @@
 ---
 layout: single
 permalink: capstone/
-title: &title "Better Customer Experience with Helpful Reviews"
+title: &title "Capstone Project"
 author_profile: true
 toc: true
 toc_label: ON THIS PAGE
 ---
 <img src="/assets/images/capstone_banner.jpg" width="100%">
 
-## 1. How It Started
+## 1. Background
 
-Ever came across news headlines like listeria tainted melons? Or wondered how else can you prepare a particular vegetable? Or attempt to locate a specific product in a hypermarket?
+We've all done our shopping online. From electronics, to household items, and even pantry items. I would believe that it would be safe to say that many of us are well versed buying online from websites, both local and foreign.
 
-These are the thoughts I had when I embarked on this project, which eventually led me to build Joe, a grocery image classifier set to address these very questions. 
+Every time we go looking for something, there are seems to be a variety of what you are looking for. How does one decide which item to buy, since item A and B do the same thing, and are at the same price?
 
-Markets are increasing competitive today, and the need to differentiate one's business is pertinent for survival. There are multiple ways a supermarket can deliver value added services to enhance customer experience. Upon identification of the grocery with Joe, the supermarket can:
-* share the identified grocery's origin for safety and a peace of mind
-* recipes related to the identified grocery
-* other products with similar benefits/properties with identified grocery
-* the exact location of a specific product
+We no longer make our purchasing decisions in the blind. We rely on product reviews. Any shopper reads approximately 10 reviews before deciding if they would buy it. A review is a testimony. It's a proven track record of the product by previous buyer's recommendations or warnings.
 
-What is in for the supermarket then? Afterall, there is no free lunch. By virtue of sharing recipes or similar products, the supermarket can potentially drive revenue by cross-selling items in the recipe. There is also the intangible benefit from enhanced customer experience which may translate to increased loyalty spending. Of course, a proper business case will need to be conducted to fully quantity this.
+<img src="/assets/images/capstone_review.jpg" width="100%">
 
-<!-- In today's technologial landscape, we are able to leverage techniques such as **deep learning** to easily classify images or even speech. For this use case, we will make use of **Convolutional Neural Networks** (CNN) and transfer learning to help with the classification of groceries. This can then add value to supermarkets in the form of helping grocers find their groceries in a shorter time. A proposal might be to add kiosks around the supermarket with the image classifer. Grocers will only need to scan a photo or image of their grocery and the kiosk will return the row and column locations of the particular grocery. -->
+The value that product reviews bring on any e-commerce platform:
+* For the **buyer**: Better decision making. Merchant/Product trust. Recommended.
+* For the **merchant**: Helps sell more. Better credibility. Informative experience.
+* For the **platform**: More business and traction. Platform becomes the 'Go-to' place for shoppers.
+* Adds to the **customer experience**
 
-## 2. Understanding the Convolutional Neutral Network
+Many products receive reviews both good and bad. However it is the 'Helpful' reviews that are the decision influencing factors.
 
-Before we go on further on how Joe is built, lets take some time to understand what a Convolutional Neural Network (CNN) is, the underlying mechanism behind an image classifier like Joe. CNN is a form of deep learning where images are broken down into number matrices and fed through layers for analysis in a forward direction. 
+### 1.1. Understanding Reviews
 
-Deep Learning is a subfield of machine learning concerned with algorithms inspired by the structure and function of the brain called artificial neural networks. These biologically inspired structures attempt to mimic the way in which neurons in our brain process stimulus from the environment, before condensing the image information and presents it in an understandble format for us.
+Reviews are often separated into 2 groups. Helpful or Unhelpful. Helpful reviews help buyers decide if they should purchase. Reviews also shared experiences from a previous buyer. Unhelpful reviews have little or no relevance to decision making, infact they often ignored.
 
-In essence, a CNN is made up of 4 main operations:
-1. Convolution 
-2. Non-Linear Activation (ReLU)
-3. Pooling or Sub Sampling
-4. Classification (Fully Connected Layer)
+Most e-commerce platforms allow the reviews to be voted on.
 
-<img src="/assets/images/CNN.png" width="100%">
+<img src="/assets/images/capstone_eg.jpg" width="100%">
 
-### 2.1 Convolution
-For any machine learning problem, a computer can only understands things in a numerical form, and image classification is no exception. In any coloured image, each pixel can be described by the degree of red, green and blue colour (each represented by a number in the range of 0 to 255) in it. As such, a 512 x 512 pixels image can simply be represented as a matrix of size 512 x 512 x 3, where 3 refers to the number of colour channels. 
+## 2. Business Case
+**Actionable Insights**
+What can we do if we could determine that a review would be:
+<img src="/assets/images/capstone_helpful.jpg" width="100%">
+_**Helpful**_:
+* It could be put in the front of buyers on a product page to help potential buyers make a decision.
+* Potential buyers could still vote if that review was helpful to them or not.
+<img src="/assets/images/capstone_unhelpful.jpg" width="100%">
+_**Unhelpful**_:
+* The merchant or platform could follow up with the reviewer, seeking recourse or more information.
+* Alternative trigger for customer satisfaction issues.
 
-And here comes the convolution, which is actually referring to a filter of size N x N used to slide across our image matrix. Think of a filter like a camera lens. There are many different lenses out in the market, and each has its own purpose. For e.g. a macro lens is use to capture small items, a wide angle lens is for panoramic shots, a zoom lens is for capturing items far away. Likewise, each filter in a CNN works with the specific purpose of extracting a unique feature from an image.
-
-Below illustrate how a filter works. We will first arbitrarily define a filter of 3x3 size (denoted as "weight"), dot products of the matrices will then be computed and this effectively reduces our original matrix into a feature map.
-
-<img src="/assets/images/convolution.gif" width="100%"> 
-
-Depending on the weights assigned, different feature maps will be obtained. Generally, low level filters work as edge detectors, and as we go higher, they tend to capture high level concepts like objects and faces.
-
-Some examples of filters:
-
-<img src="/assets/images/filters.png" width="50%">
-
-Effect of above filters:
-<img src="/assets/images/filtered_image.png" width="100%">
+**Ultimately, we can provide a better customer experience on and off the platform.**
 
 
 ### 2.2 Non-Linear Activation
