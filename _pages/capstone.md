@@ -34,15 +34,18 @@ Most e-commerce platforms allow the reviews to be voted on.
 
 <img src="/assets/images/capstone_eg.jpg">
 
-## 2. Business Case
-**Actionable Insights**
+## 2. Business Case for Actionable Insights
+
 What can we do if we could determine that a review would be:
+
 <img src="/assets/images/capstone_helpful.jpg">
+
 _**Helpful**_:
 * It could be put in the front of buyers on a product page to help potential buyers make a decision.
 * Potential buyers could still vote if that review was helpful to them or not.
 
 <img src="/assets/images/capstone_unhelpful.jpg">
+
 _**Unhelpful**_:
 * The merchant or platform could follow up with the reviewer, seeking recourse or more information.
 * Alternative trigger for customer satisfaction issues.
