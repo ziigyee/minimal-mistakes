@@ -53,72 +53,79 @@ _**Unhelpful**_:
 **Ultimately, we can provide a better customer experience on and off the platform.**
 
 
-### 2.2 Non-Linear Activation
+## 3. The Capstone
+<img src="/assets/images/capstone_goal.jpg">
 
-Activation functions are an extremely important elements of neural networks. They basically decide whether a pixel in a feature should be passed on deeper in a network or "killed". One of the most commonly used activation function is the Rectified Linear Unit (ReLU), which is an element wise operation (applied per pixel) and replaces all negative values in the feature map by zero. 
+### 3.1 The Dataset
 
-ReLU's popularity stems from the fact it is computationally easier to calculate, resulting in faster training time, and acheiving the objective of introducing non-linearity in the model. I will not go into the significance of non-linearity here, if you are interested this [page]() has provided quite a good explanation. 
+The dataset that was used for this project was from Amazon.com and can be [found here](https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt)
+I used the Amazon Product Reviews of ‘Tools’ Category.
 
-### 2.3 Pooling
+<img src="/assets/images/capstone_dataset.jpg">
 
-Image matrices tend to be large, and the situation quickly becomes unmanageable as image count and sizes grow larger. 
+### 3.1 Columns of Interest
+<img src="/assets/images/capstone_interest.jpg"> 
 
-To counter this, pooling techniques are often applied to reduce the dimension of our feature maps, while retaining the most important information. The most common pooling technique used is max pooling due to its performance. 
+Before we proceed, we need to understand which columns we would be using as our main features. Those in green, are our main focus features. We need the text data from those columns.
+For the yellow, we can use them as support features, that may or may not work for our model in predicting if a review is helpful or not.
 
-In max pooling, a N x N matrix is slided through our feature map, and only the largest element is retained for every step. The figure below illustrates how max pooling is performed with a 2x2 matrix:
+### 3.2 The Ground Truth
+In the dataset, for each review, there are Total Votes and Helpful Votes.
 
-<img src="/assets/images/maxpool.gif" width="70%">
+We accept the ground truth of a review being helpful by considering the amount of helpful or unhelpful votes the review has.
+An initial approach
+```
+Helpful Votes / Total Votes
+```
+However we start to realize that there is a fundumental issue with this.
+```
+1 Helpful Vote  /  1 Total Vote  =  100%
+99 Helpful Votes  /  100 Total Votes  =  99%
+```
+The problem here is that a review with a single helpful vote (ratio = 1.0) will beat a comment with 99 helpful votes and 1 unhelpful vote (ratio = 0.999), but clearly the latter comment is more likely to be “more helpful.”
+We needed to take in account of the number of votes.
 
-### 2.4 Fully Connected Layer
-The final part to a CNN is always a Fully Connected Layer. The term “fully connected” implies that every neuron in the previous layer is connected to every neuron on the next. The Fully Connected layer is a traditional Multi Layer Perceptron that uses a softmax activation function in the output layer. This softmax activation function works by assigning a probability to each of the training category, such that it adds up to 1. The category with the highest probability will then be the prediction.  
+**How do we determine how helpful a review is?**
 
-Think of this part like a puzzle. Prior to this, the features extracted can be thought of as pieces to the puzzle. One then has to join all of these pieces before you can get and comprehend the image.
+Using Bayesian statistics - [read here](http://nbviewer.jupyter.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter4_TheGreatestTheoremNeverTold/Ch4_LawOfLargeNumbers_PyMC2.ipynb)
 
-Now that we have an understanding on how CNN works, its time to move on to our star today Joe. Read on to find out how he is built!
+We can take into account the number of votes:
+```
+1 Helpful Vote  /  1 Total Vote  =  0.277758
+49 Helpful Votes  /  50 Total Votes  =  0.917
+71 Helpful Votes  /  100 Total Votes  =  0.632
+999 Helpful Votes  /  1000 Total Votes  =  0.996
+```
+Now this represents how helpful a review is, in a much better form.
 
-## 3. Methodology
-The approach to building Joe can be split into 4 main parts:
-1. Mining the dataset
-2. Pre-process the images
-3. Buildning and training the CNN
-4. Evaluating results
+**Alas, we need to decide what will our ground truth be**
+This may seem like going one big round, however the bayesian calculation would help further on in the actionable business side to rank and display the reviews according to a score (In this case, we shall call it the Helpfulness Score)
 
-### 3.1 Dataset
-The dataset used for this project are obtained from 2 sources:
-* [VegFru](http://openaccess.thecvf.com/content_ICCV_2017/papers/Hou_VegFru_A_Domain-Specific_ICCV_2017_paper.pdf) database from University of Science and Technology China.  
-* Web scraped from the internet (Primary Source)
+For the project; I have set a hard cut-off point for the ground truth.
+```
+1 Helpful Vote  /  1 Total Vote  =  0.277758 Helpfulness Score
+```
+The cut-off for a review to be deemed 'Helpful' is that more than 1 person must have voted for it to be 'Helpful'
+```
+IF Helpfulness Score > 0.277758:
+    Is_Helpful = 1
+ELSE
+    Is_Helpful = 0
+```
 
-A total of 15 fruits and vegetables are selected for training Joe:
-1. Apple
-2. Asparagus
-3. Banana
-4. Broccoli
-5. Cabbage
-6. Capsicums
-7. Cherry
-8. Cherry Tomato
-9. Chilli
-10. Grapes
-11. Mango
-12. Pak Choi
-13. Soursop
-14. Spinach
-15. Strawberry
+### 3.3 Working Dataset
+The original dataset was 1.7M rows. In order for us to build the model, we need to manage our data, for training, testing and predicting on. 
 
-Each category contains at least 2,000 images to ensure sufficient representation, for a grand total of 37,000 images used. 
+<img src="/assets/images/capstone_workingdata.jpg"> 
 
-It is highly recommended that your images contain a good mix of clean and noisy images. The rationale behind is clean images will train the machine to pinpoint the object of interest, whereas noisy images will train the machine for real world application.
+The dataset was split into 2 sets.
+1. Has Votes - Which we will use for training and building our model. (consist of 42% of the main dataset)
+2. No Votes - Which is our 'hold-out' data to predict on. (consist of 58% of the main dataset)
 
-Sample Images:
-<img src="/assets/images/Sample.png" width="100%">
+The logic is that we use the Has Votes, because we have knowledge about it. We predict on the No Votes because these reviews have not been determined if they are Helpful or Not, since they may not even be displayed to the potential buyers.
 
-Main packages used for Joe:
-1. Numpy
-2. PIL
-3. os, shutil
-5. matplotlib
-6. sci-kit learn
-7. keras with tensorflow-gpu backend
+**From the Has Votes set, we sampled 50,000 rows as our working dataset.**
+
 
 
 ### 3.2 Preprocessing Images
