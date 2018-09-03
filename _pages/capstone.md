@@ -128,23 +128,55 @@ The logic is that we use the Has Votes, because we have knowledge about it. We p
 
 
 
-## 4. Model Building
+## 4. Before Model Building
+Before we go any further, we need to define the approach and metrics that we will use to evaluate our model(s).
+**We are tackling this as a Classification problem. Where we will classify reviews as Is_Helpful = 1 or 0.**
 
+1. We start off with Data Preparation - cleaning the text data, fixing of HTML embeddings, emoticons, non-UTF-8 characters.
+2. Next, we proceed with Model Selection.
+3. Train and Test the model.
+4. Analyse the results - with respect to the business outcome.
 
+<img src="/assets/images/capstone_approachmetrics.jpg"> 
 
-### 4.1 Preprocessing and Baseline model
-Logreg Baseline Model
+The 2 main metrics that we are looking at would be:
+1. Precision: *When it's actually 'Helpful', how often does it predict 'Helpful'.*
+2. Recall: *When it predicts 'Helpful', how often is it correct?*
 
+### 4.1 Baseline model
+As this is a binary classification model, we start off with a Logistic Regression model as the baseline model.
+A pipeline was also built to analyse text features by groups of words and characters together with their frequencies.
+By iteration, there were 3 main features that contributed to the best logistic regression score.
+
+<img src="/assets/images/capstone_baseline.jpg"> 
+
+Now that we have a baseline model to start from, we began trying out different models.
 ### 4.2 Model Selection
-Comparison Chart
+<img src="/assets/images/capstone_compare.jpg"> 
+
+I did a comparison with models that work differently. From [Naive Bayes models](http://scikit-learn.org/stable/modules/naive_bayes.html), [Decision Tree models](http://scikit-learn.org/stable/modules/tree.html), [Boosted Tree models](https://xgboost.readthedocs.io/en/latest/) and the [Support Vector Classifier](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC)
+
+I found that the LinearSVC model could classify the results the best, in accordance to my needs.
+
+<img src="/assets/images/capstone_linearSVC.jpg"> 
+**Linear Support Vector Classification**
+The core concept behind the success and the powerful nature of Support Vector Machines is that of margin maximisation. More specifically, SVMs attempt to build a decision boundary that accurately separates the training samples of different classes by maximising the margin between them. The margin is the (perpendicular) distance from the decision surface to the closest data points of each class.
+
 
 ### 4.3. Alternate Model
+Given the nature of a this starting off from a NLP (Natural Language Processing) root, I decided to try an alternate approach. Instead of decision boundary approach (LinearSVC), i tried a Recurrent neural network, with a Long Short Term Memory. By this approach, the neural network would be learning via the sequence of words and characters.
 
-LSTM
+This is a simplified way of describing a Recurrent neural network, with a Long Short Term Memory.
+- A simple neural network does'nt have any memory. It process information straight through.
+- A Recurrent neural network, has *some* memory. Letting it remember just a little. Remembering and learning (adding information) at the same time.
+- A Recurrent neural network with a Long Short Term Memory has the ability to remember more. Therefore learning and remembering and greater capacity.
+
+<img src="/assets/images/capstone_rnnLSTM.jpg"> 
+
 
 ### 4.4 Model Conclusion & Evaluation
 
-
+<img src="/assets/images/capstone_conclude.jpg"> 
 
 
 ## 5. Risk and Limitations
