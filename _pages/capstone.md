@@ -177,6 +177,11 @@ The architecture that I used for the alternate approach, was to create a similar
 
 <img src="/assets/images/capstone_architecture.jpg"> 
 
+Just a quick note about the above:
+- I tried using the GloVE word embeddings at 100d and 300d as well, but the results were the same. Reverting back to 100d was lighter.
+- Bidirectional layers allowed the 'learning' to go back and forth.
+- GlobalMaxPool was used after each LSTM layer to reduce the load before concatenating as the matrix of information (given it was tokenized from text) from the LSTM layer would be large and memory intensive.
+
 Below are the results and the conclusions.
 ### 4.4 Model Conclusion & Evaluation
 
@@ -204,8 +209,8 @@ What was more important for me was the percentages % of how many Helpful reviews
 ## 6. Next Steps & Improvements
 1. Collect more data apart from this dataset
   - For this model to perform better, in better context, more data such as the product information and descriptions, its life-span on the marketplace etc, may be other predictors I could use to develop a better model, contributing to factors of 'Helpfulness'.
-2. Better sentence understanding using POS (Parts-of-speech) Tagging
-  - This may be a feature to use, as 'helpful' features may have a certain sentence structure.
+2. Try out different word-embeddings such as FastText
+  - As compared to the GloVE embeddings, FastText embedding was trained on more informal language which would could have been more ideal for the case of reviews.
 3. Try out Attention based Neural Network
   - Attention based neural network architecture learns to encode a variable-length sequence into a fixed-length vector representation and to decode a given fixed-length vector representation back into a variable-length sequence.
   - This may help in the as it learns sentence by sentence, instead of words or characters.
